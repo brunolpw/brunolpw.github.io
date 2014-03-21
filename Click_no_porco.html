@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Click no Porco</title>
+
+<style type="text/css">
+
+#inicio
+{
+ font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+ font-size:18px;
+ background-color:#FFFFFF;
+ width:900px;
+ height:auto;
+ margin:auto;
+ position:relative;
+}
+/*======================================================================*/
+#topo
+{
+ width:900px;
+ height: 50px;
+font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+font-size:50px;
+margin:auto;
+text-align:center;
+background-color:#FFFFFF;
+}
+/*======================================================================*/
+#corpo
+{
+ font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+ font-size:18px;
+ background-color:#55FF66;
+ width:500px;
+ height:300px;
+ border:7px black dashed;
+ margin:auto;
+ position:relative;
+}
+/*======================================================================*/
+#canvas
+{
+ width:300px;
+ height:300px;
+ float:left;
+}
+/*======================================================================*/
+#contador
+{
+ width:500px;
+ height:300px;
+ float:leaft;
+ background-color:#55FF66;
+ font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+ font-size:1	8px;
+}
+/*======================================================================*/
+
+</style>
+<!--=====================================================================================================================-->
+<script type="text/javascript">
+/*======================================================================*/
+// CONTADOR
+
+var c=60;
+var t;
+var timer_is_on=0;
+
+function timedCount()
+{
+  document.getElementById('resultado').value=c;
+  c=c-1;
+  t=setTimeout("timedCount()",1000);
+  if (c == -1)
+     {
+       barrinha();
+       alert ("Voce ja pode clicar no seu porco de novo! Seu ponto foi contabilizado com sucesso!");
+     }
+}
+
+function doTimer()
+{
+ document.getElementById("botao-continar").disabled=true; //faz o botao CONTINUAR ficar inativo.
+  if (!timer_is_on)
+     {
+       timer_is_on=1;
+       timedCount();
+     }
+}
+
+function stopCount()
+{
+  clearTimeout(t);
+  timer_is_on=0;
+  document.getElementById("botao-continar").disabled=false; //faz o botao CONTINUAR ficar ativo.
+}
+
+function barrinha()
+{ 	
+  stopCount();
+  c=60;
+  if(document.getElementById("nota").value < 20)
+    {  document.getElementById("nota").value += 1; }	
+  
+  if(document.getElementById("nota").value >= 20)
+    {
+	 alert ('parabens, voce atingiu o nivel maximo de clicks no seu porco');
+	 document.getElementById("nota").value = 0;
+    }
+}
+
+/*======================================================================*/
+/*======================================================================*/
+
+//                               CANVAS
+
+function inicio()
+	{
+		var fundo = document.getElementById("cenario");// Recupera cenário do canvas
+		var context = fundo.getContext("2d");// Indica que será utilizado o canvas 2D
+		
+		// Pano Palco
+		context.fillStyle = '#55FF66';
+		//retangulo  (X, Y, W, H)
+		context.fillRect(0, 0, 300, 300);
+
+/*==============================================================================================*/
+
+//CORPO
+context.beginPath();
+context.arc(150, 150, 70, 0, 2*Math.PI, false);
+
+context.fillStyle = "#FFAACC";
+context.fill();
+context.lineWidth = 5;
+context.strokeStyle = "#000000";
+context.stroke();
+
+/*==============================================================================================*/
+
+//FOCINHO
+context.beginPath();
+context.arc(150, 170, 25, 0, 2*Math.PI, false);
+
+context.fillStyle = "#FFE4E1";
+context.fill();
+context.lineWidth = 3;
+context.strokeStyle = "#000000";
+context.stroke();
+
+//FOCINHO 2
+for(var L = 0; L < 2; L++)
+{
+  context.beginPath();
+  context.arc(141+(L*18), 170, 5, 0, 2*Math.PI, false);
+  
+  context.fillStyle = "#FFAACC";
+  context.fill();
+  context.lineWidth = 5;
+  context.strokeStyle = "#000000";
+  context.stroke();
+}
+
+/*==============================================================================================*/
+
+//OLHOS
+for(var L = 0; L < 2; L++)
+{
+  context.beginPath();
+  context.arc(125+(L*50), 132, 15, 0, 2*Math.PI, false);
+
+  context.fillStyle = "#FFFFFF";
+  context.fill();
+  context.lineWidth = 4;
+  context.strokeStyle = "#000000";
+  context.stroke();
+}
+
+//OLHOS 2
+for(var L = 0; L < 2; L++)
+{
+  context.beginPath();
+  context.arc(127+(L*46), 138, 3, 0, 2*Math.PI, false);
+  context.lineWidth = 4;
+  context.strokeStyle = "#000000";
+  context.stroke();
+}
+
+/*==============================================================================================*/
+
+//BOCA
+context.beginPath();
+context.arc(150, 190, 20, 0, 1*Math.PI, false);
+
+context.lineWidth = 6;
+context.strokeStyle = "#000000";
+context.stroke();
+
+
+/*==============================================================================================*/
+//PERNAS 
+for(var L = 0; L < 2; L++)
+{
+  context.beginPath();
+  context.arc(110+(L*80), 225, 15, 0, 2*Math.PI, false);
+
+  context.fillStyle = "#FFAACC";
+  context.fill();
+  context.lineWidth = 5;
+  context.strokeStyle = "#000000";
+  context.stroke();
+}
+
+//PERNAS 2
+for(var L = 0; L < 2; L++)
+{
+  context.beginPath();
+  context.arc(105+(L*10), 237, 5, 0, 2*Math.PI, false);
+
+  context.fillStyle = "#000000";
+  context.fill();
+  context.lineWidth = 5;
+  context.strokeStyle = "#000000";
+  context.stroke();
+
+  context.beginPath();
+  context.arc(185+(L*10), 237, 5, 0, 2*Math.PI, false);
+
+  context.fillStyle = "#000000";
+  context.fill();
+  context.lineWidth = 5;
+  context.strokeStyle = "#000000";
+  context.stroke();
+}
+
+/*==============================================================================================*/
+
+//ORELHAS
+for(var L = 0; L < 2; L++)
+{
+  context.beginPath();
+  context.arc(100+(L*100), 100, 20, 0, 2*Math.PI, false);
+
+  context.fillStyle = "#FFAACC";
+  context.fill();
+  context.lineWidth = 3;
+  context.strokeStyle = "#000000";
+  context.stroke();
+}
+
+/*==============================================================================================*/
+
+}
+</script>
+</head>
+
+<body onload="inicio();">
+<div id="inicio">
+    
+     <div id="topo">
+           <span>CLICK NO PORCO</span>
+     </div>
+     
+	<br>
+	
+	<div id="corpo">
+	
+	     <div id="canvas">
+	          <canvas id="cenario" width="300px" height="300px" style="cursor:pointer" onclick="doTimer()"> </canvas>
+         </div>
+         
+         <div id="contador">
+         <table>
+         <tr>
+             <th><span>Clicks:</span></th> <th><meter title="Clicks" id="nota" min="0" max="20" value="0" ></meter></th>
+         </tr>
+         
+         <tr>
+             <th><span>Aguarde: </span></th> <th><output id="resultado">0</output><span> <abbr title="Segundos">Sec.</abbr></span></th>
+         </tr>
+            
+         <tr>
+             <th><input style="visibility:visible" type="button" value="PAUSAR" onclick="stopCount()" /></th> <th><input id="botao-continar" disabled="disabled" type="button" value="CONTINUAR" onclick="doTimer()" /></th>
+         </tr>
+         </table>
+    
+	     </div>
+	
+	</div>
+</div>
+</body>
+</html>

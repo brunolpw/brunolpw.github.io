@@ -1,33 +1,71 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+<meta charset="utf-8">
+<title>brunolpw</title>
+	<!--<link href="css/css_reset.css" rel="stylesheet" type="text/css">-->
+	<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <!--Principais Brush-->
+	<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushJava.js"></script>
+    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js"></script>
+    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushPython.js"></script>
+    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushSql.js"></script>
+    <!--
+      -- Comandos relativos:
+      -- c, cpp
+      -- c-sharp, csharp
+      -- java
+      -- js, jscript, javascript
+      -- css
+      -- php
+      -- py, python
+      -- sql
+    -->
+	<link type="text/css" rel="stylesheet" href="js/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+<body>
+	<h1>Bem-vindo ao brunolpw</h1>
+    <hr>
+    <nav>
+        <p>Menu.</p>
+    </nav>
+    <hr>
+    <p>Teste de syntaxhighlighter 3.0</p>
+    
+    <pre class="brush: c;">
+    	#include &lt;stdio.h&gt;
+        #include &lt;stdlib.h&gt;
+        
+        /*
+         *	Compilando no Windows:
+         *		gcc -o main.exe main.c -Wall
+         *
+         *	Rodar no Windows:
+         *		main.exe
+         * */
+        int main()
+        {
+            fprintf(stdout, "Hello C World!\n");
+            
+            return (EXIT_SUCCESS);
+        }
+	</pre>
+    
+    <p>Exemplo de código na linguagem C.</p>
+    
+    <hr>
+    <p>Tecnologias:</p>
+    <ul>
+		<li><a href="https://github.com/">GitHub</a></li>
+		<li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a></li>
+	</ul> 
+    <p>Bruno La Porta Welausen - 2014 (c)</p>
 
-    <title>wellcome to Bruno page.</title>
-
- </head>
-
-  <body>
-     <!--https://github.com/brunolpw/brunolpw.github.io.git-->
-
-     <h1>Hello World.</h1>
-     <p>I'm hosted with GitHub pages.</p>
-	 <p>Teste de JS nas paginas de <a href="clickme.html">Click Me</a>.</p>
-	 <p>Teste de PHP e JQuery nas paginas de <a href="indexJQ.html">Rand</a>.</p>
-     <hr>
-     
-     <fooer>
-       <p>By Bruno La Porta Welausen</p>
-       <!-- <p></p> -->
-     </fooer>
-
-    <!-- JS de teste, após carregar a página -->
-    <script>
-       alert("Bem-Vindo à minha página.");
-    </script>
-
-  </body>
+</body>
 </html>

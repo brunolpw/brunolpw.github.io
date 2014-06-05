@@ -49,23 +49,22 @@
     <p>Este é na verdade um teste de syntaxhighlighter 3.0 na linguagem de programação C.</p>
     <p>No código encontra-se um comentário que nos remete a forma de compilar este código em uma maquina rodando o sistema operacional Windows. Primeiro devemos ver se possuímos o compilador instalado na maquina, caso não possua devemos instalar algum, indico o <a href=“http://www.mingw.org/“>MinGW</a>, após fazer a instalação, devemos configurar a variável de ambiente do Windows, para isto siga os passos indicados:</p>
     <ul>
-       <li>Abra uma pasta qualquer, localize no menu latera o item “computador“;</li>
-       <li>Clique com o botão direito e vá em “propriedades“, abrirá uma janela chamada “sistema“;</li>
-       <li>Localize o itém “Configurações avançadas do sistema“ e clique nele;</li>
-       <li>Nesta nova janela vá em “Avançados“ e em “variáveis de ambiente...“;</li>
-       <li>Em “variáveis do sistema“ localize a variável “Path“ selecione-a e clique em “editar...“</li>
-       <li>Onde diz “valor da variável“ (NÃO APAGUE NADA!) vá até o final da linha e, caso não exista, adicione um “;“ ponto e virgola, seguido do caminho onde foi instalado o MinGW. Ficando assim “C:\MinGW\bin;C:\MinGW\MSYS\1.0\bin;“;</li>
+       <li>Abra uma pasta qualquer, localize no menu latera o item "computador";</li>
+       <li>Clique com o botão direito e vá em "propriedades", abrirá uma janela chamada "sistema";</li>
+       <li>Localize o itém "Configurações avançadas do sistema" e clique nele;</li>
+       <li>Nesta nova janela vá em "Avançados" e em "variáveis de ambiente...";</li>
+       <li>Em "variáveis do sistema" localize a variável "Path" selecione-a e clique em "editar..."</li>
+       <li>Onde diz "valor da variável" (NÃO APAGUE NADA!) vá até o final da linha e, caso não exista, adicione um ";" ponto e virgola, seguido do caminho onde foi instalado o MinGW. Ficando assim "C:\MinGW\bin;C:\MinGW\MSYS\1.0\bin;";</li>
        <li>Clique em OK em todas as telas;</li>
-       <li>Vá no menu iniciar e digite “cmd“ [ENTER];</li>
-       <li>Uma tela preta de prompt se abrirá, nela basta digitar “cd <caminho>“ para ir até a pasta onde se encontar o seu arquivo .c, supondo que está salvo em Downloads, o comando ficaria assim: “cd Downloads“;</li>
-       <li>Agora basta seguir o que se encontra no comentário: “gcc -o main.exe main.c -Wall“;</li>
-       <li>Apóis isto abrindo a pasta Downloads você encontrará um arquivo com o nome “main.exe“, para executar basta dar dois cliques nele, mas note que ele irá abrir e fechar muito rápido, então vamos voltar ao cmd e nele (após direcionar para a pasta novamente) digitar o comando “main.exe“.
+       <li>Vá no menu iniciar e digite "cmd" [ENTER];</li>
+       <li>Uma tela preta de prompt se abrirá, nela basta digitar "cd <caminho>" para ir até a pasta onde se encontar o seu arquivo .c, supondo que está salvo em Downloads, o comando ficaria assim: "cd Downloads";</li>
+       <li>Agora basta seguir o que se encontra no comentário: "gcc -o main.exe main.c -Wall";</li>
+       <li>Apóis isto abrindo a pasta Downloads você encontrará um arquivo com o nome "main.exe", para executar basta dar dois cliques nele, mas note que ele irá abrir e fechar muito rápido, então vamos voltar ao cmd e nele (após direcionar para a pasta novamente) digitar o comando "main.exe".
     </ul>
     <p>Pronto, nosso primeiro programa em C está pronto!</p>
     
     <pre class="brush: c;">
     	#include &lt;stdio.h&gt;
-        #include &lt;stdlib.h&gt;
         
         /*
          *	Compilando no Windows:
@@ -76,9 +75,8 @@
          * */
         int main()
         {
-            fprintf(stdout, "Hello C World!\n");
-            
-            return (EXIT_SUCCESS);
+            printf("Hello C World!\n");
+            return 0;
         }
 	</pre>
     

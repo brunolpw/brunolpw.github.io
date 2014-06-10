@@ -14,4 +14,4 @@
 	
 	//alert(today);
 
-	document.write(today);
+	//document.write(today); // Aplicar este JS quando a página estiver pronta. :)

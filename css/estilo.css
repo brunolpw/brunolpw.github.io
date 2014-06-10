@@ -1,4 +1,8 @@
 #all{
+    width:100%;
+    height:auto;
+    padding:15px;
+    margin:0px;
     background-color:#1D2E60;
 }
 
@@ -19,5 +23,5 @@
 }
 
 #footer{
-    background-color:#0000FF;
+    background-color:#000033;
 }
